@@ -1,0 +1,8 @@
+node_modules/
+
+# Removed Webflow JS bundles (no longer referenced in HTML)
+js/sadie-bass-music.schunk.*
+js/sadie-bass-music.f9409bec.*
+js/sadie-bass-music.b6a105a6.*
+js/sadie-bass-music.aba77427.*
+js/0xsu4s4hfrfgn4seqvzjj4ppaa-mpw

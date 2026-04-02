@@ -1,0 +1,9 @@
+{
+  "name": "sadiebassmusic",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sadie Bass Music website",
+  "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80"
+  }
+}
