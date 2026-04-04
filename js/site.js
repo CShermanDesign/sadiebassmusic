@@ -5,6 +5,7 @@
     initMobileMenu();
     initForms();
     initSliders();
+    initPopup();
   });
 
   function initMobileMenu() {
@@ -119,5 +120,57 @@
         btn.value = original;
         btn.disabled = false;
       });
+  }
+
+  function initPopup() {
+    var overlay = document.getElementById('popup-overlay');
+    var closeBtn = document.getElementById('popup-close');
+    var form = document.getElementById('popup-subscriber-form');
+    if (!overlay || sessionStorage.getItem('popup-shown')) return;
+
+    setTimeout(function () {
+      overlay.classList.add('active');
+      sessionStorage.setItem('popup-shown', '1');
+    }, 5000);
+
+    function closePopup() {
+      overlay.classList.remove('active');
+    }
+
+    closeBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closePopup();
+    });
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('[type="submit"]');
+        var original = btn.value;
+        btn.value = 'Sending...';
+        btn.disabled = true;
+
+        fetch(form.action || window.location.pathname, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error('fail');
+            form.style.display = 'none';
+            overlay.querySelector('.popup-success').style.display = 'block';
+            setTimeout(closePopup, 3000);
+          })
+          .catch(function () {
+            var err = overlay.querySelector('.popup-error');
+            err.style.display = 'block';
+            setTimeout(function () { err.style.display = 'none'; }, 4000);
+          })
+          .finally(function () {
+            btn.value = original;
+            btn.disabled = false;
+          });
+      });
+    }
   }
 })();

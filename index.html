@@ -41,6 +41,23 @@
       .div-block-2 .link-block:hover { opacity: 1; }
       .div-block-2 .image { width: 50px; padding: 3px; }
       @media screen and (max-width: 479px) { .bit-follow-btn { font-size: 16px !important; white-space: nowrap; } }
+      .popup-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 99999; justify-content: center; align-items: center; display: flex; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease; }
+      .popup-overlay.active { opacity: 1; visibility: visible; }
+      .popup-modal { position: relative; background: linear-gradient(160deg, #2a2a2a, #111); border: 1px solid #333; border-radius: 12px; padding: 40px 32px 32px; max-width: 420px; width: 90%; text-align: center; transform: translateY(20px); transition: transform 0.4s ease; }
+      .popup-overlay.active .popup-modal { transform: translateY(0); }
+      .popup-close { position: absolute; top: 12px; right: 16px; background: none; border: none; color: #999; font-size: 28px; cursor: pointer; line-height: 1; }
+      .popup-close:hover { color: #fff; }
+      .popup-logo { width: 120px; margin: 0 auto 16px; display: block; }
+      .popup-heading { color: #d4af37; font-family: Oswald, sans-serif; font-size: 22px; font-weight: 600; letter-spacing: 2px; line-height: 1.2; margin: 0 0 10px; text-transform: uppercase; }
+      .popup-subtext { color: #ccc; font-family: 'PT Serif', serif; font-size: 14px; line-height: 1.5; margin: 0 0 20px; }
+      .popup-form { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+      .popup-input { width: 100%; padding: 12px 16px; border: 1px solid #555; border-radius: 8px; background: #1a1a1a; color: #fff; font-size: 15px; font-family: 'PT Serif', serif; outline: none; box-sizing: border-box; }
+      .popup-input::placeholder { color: #777; }
+      .popup-input:focus { border-color: #d4af37; }
+      .popup-btn { width: 100%; padding: 12px; border: none; border-radius: 8px; background: linear-gradient(225deg, #d4af37, #98720b); color: #17252a; font-family: Oswald, sans-serif; font-size: 16px; font-weight: 600; letter-spacing: 2px; cursor: pointer; text-transform: uppercase; }
+      .popup-btn:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.4); }
+      .popup-success, .popup-error { color: #d4af37; font-family: 'PT Serif', serif; font-size: 14px; margin-top: 12px; }
+      .popup-error { color: #e55; }
     </style>
     <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="images/app-icon.png" rel="apple-touch-icon" />
@@ -123,12 +140,6 @@
       <h2 class="background-heading light-heading">2026</h2>
     </div>
     <div class="section youtubevid topdivider">
-      <div class="container-3 w-container">
-        <h1 class="h1smaller black">Sadie&#x27;s Catalog<br /><span class="thin">Play Now</span></h1>
-      </div>
-      <div class="w-layout-blockcontainer w-container">
-        <div bind="e2793037-1e88-5877-94f3-7f0e218dcd66" class="w-embed w-iframe"><iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/0KKnDewzC3LxfR6L3RA3i8?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
-      </div>
       <div class="rl-padding-global">
         <div class="rl-container-large">
           <div class="rl-padding-section-large">
@@ -182,8 +193,8 @@
         </div>
       </div>
     </div>
-    <div id="music" class="section music">
-      <h2 class="background-heading shadowed">MUSIC</h2>
+    <div id="music" class="section music" style="padding-top: 0.5em; padding-bottom: 0.5em;">
+      <h2 class="background-heading shadowed" style="font-size: 12vw; line-height: 0.9; text-transform: uppercase; margin: 0; bottom: 0;">SADIE&#x27;S<br>RECENT<br>RELEASES</h2>
       <div class="inner-container">
         <div class="column">
           <div data-delay="6000" data-animation="slide" class="mobile-slider music-slider slidertopmobilehide w-slider" data-autoplay="false" data-easing="ease-out-expo" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="2400" data-infinite="false">
@@ -279,13 +290,13 @@
     </div>
     <div class="sectionblack top">
       <div class="columns-2 top w-row">
-        <div class="column-4 w-col w-col-6"><img src="images/talkdirttome_cover_v2.jpg" loading="lazy" alt="" class="image-7" /></div>
+        <div class="column-4 w-col w-col-6"><img src="images/cover_0000_backonmybullshitimage_cover.jpg" loading="lazy" alt="Back On My Bullshit cover art" class="image-7" /></div>
         <div class="column-5 rightalign w-col w-col-6">
-          <h1 class="heading-7">Talk Dirt To Me</h1><a href="https://open.spotify.com/track/7iLkjRjQwlV3fh9ZtSgUgk?si=78c7f49483d8408c" target="_blank" class="link-block-3 w-inline-block">
+          <h1 class="heading-7">Back On My Bullshit</h1><a href="https://open.spotify.com/track/4p5C994GAFsUFGMcFCDAqI?si=ada0e15a50dd40e4" target="_blank" class="link-block-3 w-inline-block">
             <div class="div-block-3"><img src="images/spotify_icon_madeforit_section.png" loading="lazy" alt="" class="image-3" />
               <h2 class="spotifypresave">Stream on Spotify</h2>
             </div>
-          </a><a href="https://music.apple.com/us/album/talk-dirt-to-me-single/1815313393" target="_blank" class="link-block-3 w-inline-block">
+          </a><a href="https://music.apple.com/lb/album/back-on-my-b-t-single/1861002199" target="_blank" class="link-block-3 w-inline-block">
             <div class="div-block-3"><img src="images/apple_icon_madeforit_section.png" loading="lazy" alt="" class="image-4" />
               <h2 class="applepresave">Stream on Apple Music</h2>
             </div>
@@ -295,13 +306,13 @@
     </div>
     <div class="sectionblack">
       <div class="columns-2 w-row">
-        <div class="column-4 w-col w-col-6"><img src="images/sb_coverart_0001_drunkenough.jpg" loading="lazy" alt="" class="image-6" /></div>
+        <div class="column-4 w-col w-col-6"><img src="images/cover_0002_FUimADHD_cover.jpg" loading="lazy" alt="FU I'm ADHD Acoustic cover art" class="image-6" /></div>
         <div class="column-5 w-col w-col-6">
-          <h1 class="heading-7">Drunk Enough</h1><a href="https://open.spotify.com/track/0BXREHmzcJPocpAtEoEJU8?si=be5eadc9054d42cc" target="_blank" class="link-block-3 w-inline-block">
+          <h1 class="heading-7">FU I&#x27;m ADHD &#x2013; Acoustic</h1><a href="https://open.spotify.com/track/0UareftmMOCsg0dbn53MMG?si=dad685c33ee3442e" target="_blank" class="link-block-3 w-inline-block">
             <div class="div-block-3"><img src="images/spotify_icon_madeforit_section.png" loading="lazy" alt="" class="image-3" />
               <h2 class="spotifypresave">Stream on Spotify</h2>
             </div>
-          </a><a href="https://music.apple.com/us/album/drunk-enough/1797998893?i=1797998894" target="_blank" class="link-block-3 w-inline-block">
+          </a><a href="https://music.apple.com/us/album/fu-im-adhd-acoustic-single/1874059269" target="_blank" class="link-block-3 w-inline-block">
             <div class="div-block-3"><img src="images/apple_icon_madeforit_section.png" loading="lazy" alt="" class="image-4" />
               <h2 class="applepresave">Stream on Apple Music</h2>
             </div>
@@ -311,7 +322,7 @@
     </div>
     <div class="sectionblack top">
       <div class="columns-2 top w-row">
-        <div class="column-4 w-col w-col-6"><img src="images/sb_coverart_0000_dirtonhim.jpg" loading="lazy" alt="" class="image-7" /></div>
+        <div class="column-4 w-col w-col-6"><img src="images/sb_coverart_0000_dirtonhim.jpg" loading="lazy" alt="Dirt On Him cover art" class="image-7" /></div>
         <div class="column-5 rightalign w-col w-col-6">
           <h1 class="heading-7">Dirt On Him</h1><a href="https://open.spotify.com/track/0RyBBxvyuDkhFMHHz79tiw?si=97eccf3cf4dd47fa" target="_blank" class="link-block-3 w-inline-block">
             <div class="div-block-3"><img src="images/spotify_icon_madeforit_section.png" loading="lazy" alt="" class="image-3" />
@@ -325,16 +336,31 @@
         </div>
       </div>
     </div>
-    <div class="sectionblack hidetrack">
+    <div class="sectionblack">
       <div class="columns-2 w-row">
-        <div class="column-4 w-col w-col-6"><img src="images/sb_coverart_0000_wakenbake.jpg" loading="lazy" alt="" class="image-8" /></div>
+        <div class="column-4 w-col w-col-6"><img src="images/cover_0001_HowLow_coverart.jpg" loading="lazy" alt="How Low cover art" class="image-6" /></div>
         <div class="column-5 w-col w-col-6">
-          <h1 class="heading-7">Wake N&#x27; Bake</h1>
-          <h2 class="heading-8">Out Now on All Major Streaming Platforms</h2><a href="https://open.spotify.com/track/1X0n5fvC3VZJWP1vY1jF34?si=a609a2fc27a44b2b" target="_blank" class="link-block-3 w-inline-block">
+          <h1 class="heading-7">How Low (ft. Landon Wall)</h1><a href="https://open.spotify.com/track/3PEFVBYoXeCuJRUwrzWkMS?si=561a0240f0424648" target="_blank" class="link-block-3 w-inline-block">
             <div class="div-block-3"><img src="images/spotify_icon_madeforit_section.png" loading="lazy" alt="" class="image-3" />
               <h2 class="spotifypresave">Stream on Spotify</h2>
             </div>
-          </a><a href="https://music.apple.com/us/album/wake-n-bake/1675746052?i=1675746053" target="_blank" class="link-block-3 w-inline-block">
+          </a><a href="https://music.apple.com/us/song/how-low-feat-sadie-bass/1879755701" target="_blank" class="link-block-3 w-inline-block">
+            <div class="div-block-3"><img src="images/apple_icon_madeforit_section.png" loading="lazy" alt="" class="image-4" />
+              <h2 class="applepresave">Stream on Apple Music</h2>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="sectionblack top">
+      <div class="columns-2 top w-row">
+        <div class="column-4 w-col w-col-6"><img src="images/talkdirttome_cover_v2.jpg" loading="lazy" alt="Talk Dirt To Me cover art" class="image-7" /></div>
+        <div class="column-5 rightalign w-col w-col-6">
+          <h1 class="heading-7">Talk Dirt To Me</h1><a href="https://open.spotify.com/track/7iLkjRjQwlV3fh9ZtSgUgk?si=78c7f49483d8408c" target="_blank" class="link-block-3 w-inline-block">
+            <div class="div-block-3"><img src="images/spotify_icon_madeforit_section.png" loading="lazy" alt="" class="image-3" />
+              <h2 class="spotifypresave">Stream on Spotify</h2>
+            </div>
+          </a><a href="https://music.apple.com/us/album/talk-dirt-to-me-single/1815313393" target="_blank" class="link-block-3 w-inline-block">
             <div class="div-block-3"><img src="images/apple_icon_madeforit_section.png" loading="lazy" alt="" class="image-4" />
               <h2 class="applepresave">Stream on Apple Music</h2>
             </div>
@@ -343,142 +369,11 @@
       </div>
     </div>
     <div id="music" class="section music _2">
-      <div class="inner-container">
-        <div class="column">
-          <div bind="e2ac6aec-8319-e22f-552e-7d21089ce764" class="releases-grid w-dyn-list">
-            <div bind="e2ac6aec-8319-e22f-552e-7d21089ce765" role="list" class="releases hidemobile w-dyn-items">
-              <div bind="e2ac6aec-8319-e22f-552e-7d21089ce766" role="listitem" class="release-item w-dyn-item">
-                <div class="release-artwork-thumb">
-                  <div bind="e2ac6aec-8319-e22f-552e-7d21089ce768" style="background-image:url(&quot;images/talkdirttome_cover_v2-1.jpg&quot;);-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="artwork-thumb-container"></div>
-                  <p bind="e2ac6aec-8319-e22f-552e-7d21089ce769" class="category-label featured-release">Featured</p>
-                  <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoOptionToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-format&quot;}}}}}" class="category-label">Single</p>
-                </div>
-                <div class="release-meta">
-                  <h3 sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;name&quot;}}}}}" class="product-title">Talk Dirt To Me</h3>
-                  <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-artist-s&quot;}}}}}" class="paragraph dark">Sadie Bass</p>
-                  <div class="item-divider"></div>
-                  <div class="purchase-links"><a href="https://open.spotify.com/track/7iLkjRjQwlV3fh9ZtSgUgk?si=c8004ae05dc14cfe" bind="e2ac6aec-8319-e22f-552e-7d21089ce771" class="purchase-link stream">Stream</a><a href="https://www.youtube.com/watch?v=DhOq2ojTz6Y" bind="08f3ea06-3960-42ba-c4fb-2517252a45a6" target="_blank" class="purchase-link stream">Video</a><a href="https://open.spotify.com/track/7iLkjRjQwlV3fh9ZtSgUgk?si=c8004ae05dc14cfe" bind="e2ac6aec-8319-e22f-552e-7d21089ce773" class="purchase-link download w-condition-invisible">Download</a><a href="https://open.spotify.com/track/7iLkjRjQwlV3fh9ZtSgUgk?si=c8004ae05dc14cfe" bind="e2ac6aec-8319-e22f-552e-7d21089ce775" class="purchase-link buy w-condition-invisible">Buy</a></div>
-                </div>
-              </div>
-              <div bind="e2ac6aec-8319-e22f-552e-7d21089ce766" role="listitem" class="release-item w-dyn-item">
-                <div class="release-artwork-thumb">
-                  <div bind="e2ac6aec-8319-e22f-552e-7d21089ce768" style="background-image:url(&quot;images/sb_coverart_0001_drunkenough-1.jpg&quot;);-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="artwork-thumb-container"></div>
-                  <p bind="e2ac6aec-8319-e22f-552e-7d21089ce769" class="category-label featured-release">Featured</p>
-                  <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoOptionToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-format&quot;}}}}}" class="category-label">Single</p>
-                </div>
-                <div class="release-meta">
-                  <h3 sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;name&quot;}}}}}" class="product-title">Drunk Enough</h3>
-                  <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-artist-s&quot;}}}}}" class="paragraph dark">Sadie Bass</p>
-                  <div class="item-divider"></div>
-                  <div class="purchase-links"><a href="https://open.spotify.com/track/0BXREHmzcJPocpAtEoEJU8?si=cf43477d5403432e" bind="e2ac6aec-8319-e22f-552e-7d21089ce771" class="purchase-link stream">Stream</a><a href="https://www.youtube.com/watch?v=oUOiFaq257Q" bind="08f3ea06-3960-42ba-c4fb-2517252a45a6" target="_blank" class="purchase-link stream">Video</a><a href="https://open.spotify.com/track/0BXREHmzcJPocpAtEoEJU8?si=cf43477d5403432e" bind="e2ac6aec-8319-e22f-552e-7d21089ce773" class="purchase-link download w-condition-invisible">Download</a><a href="https://open.spotify.com/track/0BXREHmzcJPocpAtEoEJU8?si=cf43477d5403432e" bind="e2ac6aec-8319-e22f-552e-7d21089ce775" class="purchase-link buy w-condition-invisible">Buy</a></div>
-                </div>
-              </div>
-              <div bind="e2ac6aec-8319-e22f-552e-7d21089ce766" role="listitem" class="release-item w-dyn-item">
-                <div class="release-artwork-thumb">
-                  <div bind="e2ac6aec-8319-e22f-552e-7d21089ce768" style="background-image:url(&quot;images/sb_coverart_0000_dirtonhim-1.jpg&quot;);-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="artwork-thumb-container"></div>
-                  <p bind="e2ac6aec-8319-e22f-552e-7d21089ce769" class="category-label featured-release w-condition-invisible">Featured</p>
-                  <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoOptionToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-format&quot;}}}}}" class="category-label">Single</p>
-                </div>
-                <div class="release-meta">
-                  <h3 sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;name&quot;}}}}}" class="product-title">Dirt On Him</h3>
-                  <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-artist-s&quot;}}}}}" class="paragraph dark">Sadie Bass</p>
-                  <div class="item-divider"></div>
-                  <div class="purchase-links"><a href="https://open.spotify.com/track/0RyBBxvyuDkhFMHHz79tiw?si=bbbcdd5faea841bf" bind="e2ac6aec-8319-e22f-552e-7d21089ce771" class="purchase-link stream">Stream</a><a href="https://www.youtube.com/watch?v=222TE8hyUW8" bind="08f3ea06-3960-42ba-c4fb-2517252a45a6" target="_blank" class="purchase-link stream">Video</a><a href="https://open.spotify.com/track/0RyBBxvyuDkhFMHHz79tiw?si=bbbcdd5faea841bf" bind="e2ac6aec-8319-e22f-552e-7d21089ce773" class="purchase-link download w-condition-invisible">Download</a><a href="https://open.spotify.com/track/0RyBBxvyuDkhFMHHz79tiw?si=bbbcdd5faea841bf" bind="e2ac6aec-8319-e22f-552e-7d21089ce775" class="purchase-link buy w-condition-invisible">Buy</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div data-delay="6000" data-animation="slide" class="mobile-slider music-slider w-slider" data-autoplay="false" data-easing="ease-out-expo" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="2400" data-infinite="false">
-            <div class="mobile-slide-mask music-slide-mask w-slider-mask">
-              <div class="mobile-slide music-slide w-slide">
-                <div bind="e2ac6aec-8319-e22f-552e-7d21089ce77d" class="w-dyn-list">
-                  <div bind="e2ac6aec-8319-e22f-552e-7d21089ce77e" role="list" class="releases w-dyn-items">
-                    <div bind="e2ac6aec-8319-e22f-552e-7d21089ce77f" data-w-id="e2ac6aec-8319-e22f-552e-7d21089ce77f" role="listitem" class="release-item w-dyn-item">
-                      <div class="release-artwork-thumb">
-                        <div bind="e2ac6aec-8319-e22f-552e-7d21089ce781" style="background-image:url(&quot;images/talkdirttome_cover_v2-1.jpg&quot;);-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="artwork-thumb-container"></div>
-                        <p bind="e2ac6aec-8319-e22f-552e-7d21089ce782" class="category-label featured-release">Featured</p>
-                        <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoOptionToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-format&quot;}}}}}" class="category-label">Single</p>
-                      </div>
-                      <div class="release-meta">
-                        <h3 sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;name&quot;}}}}}" class="product-title">Talk Dirt To Me</h3>
-                        <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-artist-s&quot;}}}}}">Sadie Bass</p>
-                        <div class="item-divider"></div>
-                        <div class="purchase-links"><a href="https://open.spotify.com/track/7iLkjRjQwlV3fh9ZtSgUgk?si=c8004ae05dc14cfe" bind="e2ac6aec-8319-e22f-552e-7d21089ce78a" class="purchase-link stream">Stream</a><a href="https://open.spotify.com/track/7iLkjRjQwlV3fh9ZtSgUgk?si=c8004ae05dc14cfe" bind="e2ac6aec-8319-e22f-552e-7d21089ce78c" class="purchase-link download w-condition-invisible">Download</a><a href="https://open.spotify.com/track/7iLkjRjQwlV3fh9ZtSgUgk?si=c8004ae05dc14cfe" bind="e2ac6aec-8319-e22f-552e-7d21089ce78e" class="purchase-link buy w-condition-invisible">Buy</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mobile-slide w-slide">
-                <div bind="e2ac6aec-8319-e22f-552e-7d21089ce794" class="w-dyn-list">
-                  <div bind="e2ac6aec-8319-e22f-552e-7d21089ce795" role="list" class="releases w-dyn-items">
-                    <div bind="e2ac6aec-8319-e22f-552e-7d21089ce796" data-w-id="e2ac6aec-8319-e22f-552e-7d21089ce796" role="listitem" class="release-item w-dyn-item">
-                      <div class="release-artwork-thumb">
-                        <div bind="e2ac6aec-8319-e22f-552e-7d21089ce798" style="background-image:url(&quot;images/sb_coverart_0001_drunkenough-1.jpg&quot;);-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="artwork-thumb-container"></div>
-                        <p bind="e2ac6aec-8319-e22f-552e-7d21089ce799" class="category-label featured-release">Featured</p>
-                        <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoOptionToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-format&quot;}}}}}" class="category-label">Single</p>
-                      </div>
-                      <div class="release-meta">
-                        <h3 sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;name&quot;}}}}}" class="product-title">Drunk Enough</h3>
-                        <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-artist-s&quot;}}}}}">Sadie Bass</p>
-                        <div class="item-divider"></div>
-                        <div class="purchase-links"><a href="https://open.spotify.com/track/0BXREHmzcJPocpAtEoEJU8?si=cf43477d5403432e" bind="e2ac6aec-8319-e22f-552e-7d21089ce7a1" class="purchase-link stream">Stream</a><a href="https://open.spotify.com/track/0BXREHmzcJPocpAtEoEJU8?si=cf43477d5403432e" bind="e2ac6aec-8319-e22f-552e-7d21089ce7a3" class="purchase-link download w-condition-invisible">Download</a><a href="https://open.spotify.com/track/0BXREHmzcJPocpAtEoEJU8?si=cf43477d5403432e" bind="e2ac6aec-8319-e22f-552e-7d21089ce7a5" class="purchase-link buy w-condition-invisible">Buy</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mobile-slide w-slide">
-                <div bind="e2ac6aec-8319-e22f-552e-7d21089ce7ab" class="w-dyn-list">
-                  <div bind="e2ac6aec-8319-e22f-552e-7d21089ce7ac" role="list" class="releases w-dyn-items">
-                    <div bind="e2ac6aec-8319-e22f-552e-7d21089ce7ad" data-w-id="e2ac6aec-8319-e22f-552e-7d21089ce7ad" role="listitem" class="release-item w-dyn-item">
-                      <div class="release-artwork-thumb">
-                        <div bind="e2ac6aec-8319-e22f-552e-7d21089ce7af" style="background-image:url(&quot;images/sb_coverart_0000_dirtonhim-1.jpg&quot;);-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="artwork-thumb-container"></div>
-                        <p bind="e2ac6aec-8319-e22f-552e-7d21089ce7b0" class="category-label featured-release w-condition-invisible">Featured</p>
-                        <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoOptionToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-format&quot;}}}}}" class="category-label">Single</p>
-                      </div>
-                      <div class="release-meta">
-                        <h3 sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;name&quot;}}}}}" class="product-title">Dirt On Him</h3>
-                        <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-artist-s&quot;}}}}}">Sadie Bass</p>
-                        <div class="item-divider"></div>
-                        <div class="purchase-links"><a href="https://open.spotify.com/track/0RyBBxvyuDkhFMHHz79tiw?si=bbbcdd5faea841bf" bind="e2ac6aec-8319-e22f-552e-7d21089ce7b8" class="purchase-link stream">Stream</a><a href="https://open.spotify.com/track/0RyBBxvyuDkhFMHHz79tiw?si=bbbcdd5faea841bf" bind="e2ac6aec-8319-e22f-552e-7d21089ce7ba" class="purchase-link download w-condition-invisible">Download</a><a href="https://open.spotify.com/track/0RyBBxvyuDkhFMHHz79tiw?si=bbbcdd5faea841bf" bind="e2ac6aec-8319-e22f-552e-7d21089ce7bc" class="purchase-link buy w-condition-invisible">Buy</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mobile-slide w-slide">
-                <div bind="e2ac6aec-8319-e22f-552e-7d21089ce7c2" class="w-dyn-list">
-                  <div bind="e2ac6aec-8319-e22f-552e-7d21089ce7c3" role="list" class="releases w-dyn-items">
-                    <div bind="e2ac6aec-8319-e22f-552e-7d21089ce7c4" data-w-id="e2ac6aec-8319-e22f-552e-7d21089ce7c4" role="listitem" class="release-item w-dyn-item">
-                      <div class="release-artwork-thumb">
-                        <div bind="e2ac6aec-8319-e22f-552e-7d21089ce7c6" style="background-image:url(&quot;images/sb_coverart_0000_wakenbake-1.jpg&quot;);-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="artwork-thumb-container"></div>
-                        <p bind="e2ac6aec-8319-e22f-552e-7d21089ce7c7" class="category-label featured-release w-condition-invisible">Featured</p>
-                        <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoOptionToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-format&quot;}}}}}" class="category-label">Single</p>
-                      </div>
-                      <div class="release-meta">
-                        <h3 sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;name&quot;}}}}}" class="product-title">Wake N&#x27; Bake</h3>
-                        <p sym-bind="{&quot;children&quot;:{&quot;type&quot;:&quot;Call&quot;,&quot;val&quot;:{&quot;fun&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:[&quot;DynamoGateway&quot;,&quot;dynamoPlainTextToListOfElements&quot;]},&quot;arg&quot;:{&quot;type&quot;:&quot;Select&quot;,&quot;val&quot;:{&quot;from&quot;:{&quot;type&quot;:&quot;Variable&quot;,&quot;val&quot;:&quot;Dynamo&quot;},&quot;prop&quot;:&quot;release-artist-s&quot;}}}}}">Sadie Bass</p>
-                        <div class="item-divider"></div>
-                        <div class="purchase-links"><a href="https://open.spotify.com/track/1X0n5fvC3VZJWP1vY1jF34?si=9d840339be9f48a9" bind="e2ac6aec-8319-e22f-552e-7d21089ce7cf" class="purchase-link stream">Stream</a><a href="https://open.spotify.com/track/1X0n5fvC3VZJWP1vY1jF34?si=9d840339be9f48a9" bind="e2ac6aec-8319-e22f-552e-7d21089ce7d1" class="purchase-link download w-condition-invisible">Download</a><a href="https://open.spotify.com/track/1X0n5fvC3VZJWP1vY1jF34?si=9d840339be9f48a9" bind="e2ac6aec-8319-e22f-552e-7d21089ce7d3" class="purchase-link buy w-condition-invisible">Buy</a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mobile-slider-arrows w-slider-arrow-left">
-              <div bind="e2ac6aec-8319-e22f-552e-7d21089ce7d9" class="release-slide-nav-icon w-icon-slider-left"></div>
-            </div>
-            <div class="mobile-slider-arrows w-slider-arrow-right">
-              <div bind="e2ac6aec-8319-e22f-552e-7d21089ce7db" class="release-slide-nav-icon w-icon-slider-right"></div>
-            </div>
-            <div class="mobile-slide-nav w-slider-nav w-slider-nav-invert w-round"></div>
-          </div>
-          <div class="inner-container view-all-container">
-            <div class="column center"><a href="/music" class="nav-link button dark reversshadow">View All Releases</a></div>
-          </div>
-        </div>
+      <div class="container-3 w-container">
+        <h1 class="h1smaller black">Sadie&#x27;s Catalog<br /><span class="thin">Play Now</span></h1>
+      </div>
+      <div class="w-layout-blockcontainer w-container">
+        <div class="w-embed w-iframe"><iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/0KKnDewzC3LxfR6L3RA3i8?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
       </div>
     </div>
     <div class="section-4 hide">
@@ -610,11 +505,27 @@
           </div>
         </div>
         <div>
-          <div class="text-block-2">Copyright 2025 Sadie Bass Music | <a href="https://bravuramarketing.com" target="_blank">Designed &amp; Developed by Bravura</a></div>
+          <div class="text-block-2">Copyright 2026 Sadie Bass Music | <a href="https://bravuramarketing.com" target="_blank">Designed &amp; Developed by Bravura</a></div>
         </div>
       </div>
     </div>
     <script src="js/jquery.js" type="text/javascript"></script>
     <script src="js/site.js" type="text/javascript"></script>
+    <div id="popup-overlay" class="popup-overlay">
+      <div class="popup-modal">
+        <button id="popup-close" class="popup-close">&times;</button>
+        <img src="images/sb_logoupdate.png" alt="Sadie Bass" class="popup-logo" />
+        <h2 class="popup-heading">NEVER MISS A<br>SADIE BASS UPDATE</h2>
+        <p class="popup-subtext">Get exclusive access to store discounts, tour stops, release updates, and more!</p>
+        <form id="popup-subscriber-form" name="subscriber" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="popup-form">
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value="subscriber" />
+          <input class="popup-input" maxlength="256" name="email" placeholder="Your Email" type="email" required="" />
+          <input type="submit" class="popup-btn" value="SUBSCRIBE" />
+        </form>
+        <div class="popup-success" style="display:none;">Thank you! You're on the list!</div>
+        <div class="popup-error" style="display:none;">Oops! Something went wrong.</div>
+      </div>
+    </div>
   </body>
 </html>
