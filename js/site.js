@@ -4,6 +4,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     initMobileMenu();
     initForms();
+    initSliders();
   });
 
   function initMobileMenu() {
@@ -21,6 +22,61 @@
         mobileMenu.classList.remove('menu-open');
         hamburger.classList.remove('menu-open');
       });
+    });
+  }
+
+  function initSliders() {
+    document.querySelectorAll('.w-slider').forEach(function (slider) {
+      var mask = slider.querySelector('.w-slider-mask');
+      var slides = slider.querySelectorAll('.w-slide');
+      var leftArrow = slider.querySelector('.w-slider-arrow-left');
+      var rightArrow = slider.querySelector('.w-slider-arrow-right');
+      var nav = slider.querySelector('.w-slider-nav');
+      if (!mask || slides.length === 0) return;
+
+      var current = 0;
+      var total = slides.length;
+
+      function goTo(index) {
+        if (index < 0) index = 0;
+        if (index >= total) index = total - 1;
+        current = index;
+        mask.style.transition = 'transform 0.5s ease';
+        mask.style.transform = 'translateX(-' + (current * 100) + '%)';
+        if (nav) updateDots();
+      }
+
+      function updateDots() {
+        var dots = nav.querySelectorAll('div');
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle('w-active', i === current);
+        });
+      }
+
+      if (nav) {
+        for (var i = 0; i < total; i++) {
+          var dot = document.createElement('div');
+          dot.className = 'w-slider-dot' + (i === 0 ? ' w-active' : '');
+          dot.setAttribute('data-index', i);
+          dot.addEventListener('click', function () {
+            goTo(parseInt(this.getAttribute('data-index')));
+          });
+          nav.appendChild(dot);
+        }
+      }
+
+      if (leftArrow) {
+        leftArrow.addEventListener('click', function (e) {
+          e.preventDefault();
+          goTo(current - 1);
+        });
+      }
+      if (rightArrow) {
+        rightArrow.addEventListener('click', function (e) {
+          e.preventDefault();
+          goTo(current + 1);
+        });
+      }
     });
   }
 
