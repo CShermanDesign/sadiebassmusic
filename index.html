@@ -25,6 +25,7 @@
       });
     </script>
     <style>
+      .container.navbar-container { position: relative; z-index: 1000; }
       .mobile-menu { transition: transform 0.4s ease; }
       .mobile-menu.menu-open { z-index: 999; transform: translate(0) !important; }
       .fullscreen-nav .hamburger-line { transition: transform .3s, opacity .3s, width .3s; }
@@ -36,7 +37,8 @@
       .contact-form .form-field { display: block; width: 100%; }
       .signup-form .form { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
       .signup-form .form .form-field { flex: 1 1 240px; max-width: 320px; }
-      .div-block-2 .link-block { padding: 8px 5px; }
+      .div-block-2 .link-block { padding: 8px 5px; opacity: 0.75; }
+      .div-block-2 .link-block:hover { opacity: 1; }
       .div-block-2 .image { width: 50px; padding: 3px; }
     </style>
     <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
