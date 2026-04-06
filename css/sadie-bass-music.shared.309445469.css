@@ -4939,7 +4939,7 @@ blockquote {
 
   .shows-parallax-background {
     background-image: linear-gradient(#17252a8c, #2b7a78bf), url("../images/sb_newshowssectionbg_2_v2.jpg");
-    background-position: 0 0, 0 0;
+    background-position: 0 0, 50% 30%;
   }
 
   .footer-credits {
@@ -5482,7 +5482,8 @@ blockquote {
   }
 
   .shows-parallax-background {
-    background-image: linear-gradient(#17252a8c, #2b7a78bf), url("../images/sb_newshowssectionbg_v2.jpg");
+    background-image: linear-gradient(#17252a8c, #2b7a78bf), url("../images/sb_newshowssectionbg_2_v2.jpg");
+    background-position: 0 0, 50% 30%;
   }
 
   .nav-social {
