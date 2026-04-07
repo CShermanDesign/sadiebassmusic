@@ -8,10 +8,13 @@ mailchimp.setConfig({
 exports.handler = async function (event) {
   const payload = JSON.parse(event.body).payload;
 
-  // Only forward subscriber form submissions to Mailchimp
-  // Contact form submissions stay in Netlify dashboard only
-  if (payload.form_name !== "subscriber") {
-    return { statusCode: 200, body: "Not a subscriber form — skipping Mailchimp" };
+  // Determine if this submission should go to Mailchimp
+  const isSubscriber = payload.form_name === "subscriber";
+  const isContactWithNewsletter =
+    payload.form_name === "about-contact" && payload.data.newsletter === "yes";
+
+  if (!isSubscriber && !isContactWithNewsletter) {
+    return { statusCode: 200, body: "No Mailchimp action needed — skipping" };
   }
 
   const email = payload.data.email;

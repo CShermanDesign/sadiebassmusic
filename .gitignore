@@ -1,4 +1,5 @@
 node_modules/
+.env
 
 # Removed Webflow JS bundles (no longer referenced in HTML)
 js/sadie-bass-music.schunk.*

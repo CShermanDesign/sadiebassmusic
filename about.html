@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>About | Sadie Bass</title>
+    <meta content="Learn more about country singer/songwriter Sadie Bass – her story, music journey, and how to get in touch." name="description" />
+    <meta content="About | Sadie Bass" property="og:title" />
+    <meta content="Learn more about country singer/songwriter Sadie Bass – her story, music journey, and how to get in touch." property="og:description" />
+    <meta content="images/about_Image_1.jpg" property="og:image" />
+    <meta content="About | Sadie Bass" property="twitter:title" />
+    <meta content="Learn more about country singer/songwriter Sadie Bass – her story, music journey, and how to get in touch." property="twitter:description" />
+    <meta content="images/about_Image_1.jpg" property="twitter:image" />
+    <meta property="og:type" content="website" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="css/sadie-bass-music.shared.309445469.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      WebFont.load({
+        google: {
+          families: ["Oswald:200,300,400,500,600,700", "PT Serif:400,400italic,700,700italic", "Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic", "Varela:400", "Roboto Condensed:regular,700", "Roboto:300,regular,500,700"]
+        }
+      });
+    </script>
+    <style>
+      .mobile-menu { transition: transform 0.4s ease; }
+      .mobile-menu.menu-open { z-index: 999; transform: translate(0) !important; }
+      .fullscreen-nav .hamburger-line { transition: transform .3s, opacity .3s, width .3s; }
+      .fullscreen-nav.menu-open .hamburger-line.first { transform: translateY(10px) rotate(45deg); width: 40px; }
+      .fullscreen-nav.menu-open .hamburger-line.middle { opacity: 0; }
+      .fullscreen-nav.menu-open .hamburger-line.last { transform: translateY(-10px) rotate(-45deg); width: 40px; }
+      .success-message, .error-message { display: none; }
+      /* Overlay Nav */
+      .about-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        padding: 20px 36px;
+      }
+      .about-nav-left {
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+      .about-nav-back {
+        color: #ffffffcc;
+        font-family: 'PT Serif', serif;
+        font-size: 13px;
+        text-decoration: none;
+        letter-spacing: 1px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.2s;
+      }
+      .about-nav-back:hover { color: #fff; }
+      .about-nav-back .arrow {
+        font-size: 18px;
+        line-height: 1;
+      }
+      .about-nav-center {
+        flex: 0 0 auto;
+      }
+      .about-nav-center img {
+        height: 125px;
+        width: auto;
+        display: block;
+        filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5));
+      }
+      .about-nav-right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 12px;
+      }
+      .about-nav-socials { display: flex; align-items: center; gap: 4px; }
+      .about-nav-socials a {
+        display: inline-flex;
+        opacity: 0.75;
+        transition: opacity 0.2s;
+      }
+      .about-nav-socials a:hover { opacity: 1; }
+      .about-nav-socials .nav-social-icon {
+        width: 20px;
+        height: 20px;
+        filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+      }
+      .about-nav .fullscreen-nav { display: none; }
+
+      /* Footer */
+      .section.footer { padding-top: 1.5em; }
+      .section.footer .footer-menu { margin-top: 0; }
+
+      /* Footer Legal */
+      .footer-legal-links { margin-bottom: 6px; font-size: 12px; font-family: 'PT Serif', serif; text-align: center; }
+      .footer-legal-links a { color: #ffffff80; text-decoration: none; }
+      .footer-legal-links a:hover { color: #d4af37; }
+
+      /* Legal Modal */
+      .legal-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100000; display: flex; justify-content: center; align-items: flex-end; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+      .legal-modal.active { opacity: 1; visibility: visible; }
+      .legal-modal-content { background: linear-gradient(180deg, #1a1a1a, #0d0d0d); color: #ddd; width: 100%; max-width: 800px; max-height: 85vh; border-radius: 16px 16px 0 0; padding: 32px 40px 40px; overflow-y: auto; transform: translateY(100%); transition: transform 0.4s ease; }
+      .legal-modal.active .legal-modal-content { transform: translateY(0); }
+      .legal-modal-close { position: sticky; top: 0; float: right; background: none; border: none; color: #999; font-size: 32px; cursor: pointer; line-height: 1; z-index: 1; }
+      .legal-modal-close:hover { color: #fff; }
+      .legal-modal-content h1 { color: #d4af37; font-family: Oswald, sans-serif; font-size: 28px; margin: 0 0 4px; }
+      .legal-modal-content h2 { color: #d4af37; font-family: Oswald, sans-serif; font-size: 18px; margin: 24px 0 8px; }
+      .legal-modal-content h3 { color: #eee; font-family: Oswald, sans-serif; font-size: 15px; margin: 16px 0 6px; }
+      .legal-modal-content p, .legal-modal-content li { font-family: 'PT Serif', serif; font-size: 14px; line-height: 1.6; color: #bbb; }
+      .legal-modal-content ul { padding-left: 20px; margin: 8px 0; }
+      .legal-modal-content a { color: #d4af37; text-decoration: none; }
+      .legal-modal-content a:hover { text-decoration: underline; }
+      .legal-updated { color: #888; font-size: 12px; margin-bottom: 16px; }
+
+      /* About Hero */
+      .about-hero {
+        position: relative;
+        width: 100%;
+        height: 75vh;
+        min-height: 400px;
+        overflow: hidden;
+      }
+      .about-hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .about-hero-fade {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 150px;
+        background: linear-gradient(to bottom, transparent, rgba(23,37,42,0.92));
+        pointer-events: none;
+      }
+
+      /* About Sections */
+      .about-section {
+        background: linear-gradient(0deg, rgba(23,37,42,0.85), rgba(23,37,42,0.85)), url('images/sb_merch_bg.jpg') center / cover repeat-y;
+        padding: 80px 0;
+      }
+      .about-section.bio { padding-top: 60px; }
+      .about-divider {
+        height: 3px;
+        background: linear-gradient(225deg, #d4af37, #98720b);
+        border-radius: 2px;
+      }
+      .about-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* Bio Layout */
+      .about-bio-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .about-bio-image {
+        overflow: hidden;
+        border-radius: 4px;
+      }
+      .about-bio-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transform: scale(1);
+        transition: transform 0.1s linear;
+        will-change: transform;
+      }
+      .about-bio-text p {
+        color: #fff;
+        font-family: 'PT Serif', serif;
+        font-size: 17px;
+        line-height: 1.75;
+        margin: 0 0 20px;
+      }
+      .about-bio-text p:last-child { margin-bottom: 0; }
+      .about-bio-text a {
+        color: #d4af37;
+        text-decoration: underline;
+        transition: color 0.2s;
+      }
+      .about-bio-text a:hover {
+        color: #fff;
+      }
+      .about-bio-text .artist-name {
+        color: #d4af37;
+        font-weight: 700;
+      }
+
+      /* Contact Layout */
+      .about-contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 640px;
+      }
+      .about-contact-left {
+        background: linear-gradient(160deg, #2a2a2a, #111);
+        border: 1px solid #333;
+        border-right: none;
+        border-radius: 8px 0 0 8px;
+        padding: 52px 44px;
+        display: flex;
+        flex-direction: column;
+      }
+      .about-contact-left h2 {
+        color: #d4af37;
+        font-family: Oswald, sans-serif;
+        font-size: 42px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin: 0 0 24px;
+      }
+      .about-contact-info {
+        margin-bottom: 32px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid #333;
+      }
+      .about-contact-info p {
+        color: #ffffffb3;
+        font-family: 'PT Serif', serif;
+        font-size: 14px;
+        margin: 6px 0;
+        line-height: 1.5;
+      }
+      .about-contact-info p strong { color: #d4af37; }
+      .about-contact-info p a {
+        color: #def2f1;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .about-contact-info p a:hover { text-decoration: underline; }
+
+      /* Contact Form */
+      .about-form { flex: 1; }
+      .about-form-row {
+        display: flex;
+        gap: 20px;
+      }
+      .about-form-group {
+        flex: 1;
+        margin-bottom: 20px;
+      }
+      .about-form-group label {
+        display: block;
+        color: #ffffffb3;
+        font-family: 'PT Serif', serif;
+        font-size: 12px;
+        margin-bottom: 4px;
+        letter-spacing: 0.5px;
+      }
+      .about-form-group input[type="text"],
+      .about-form-group input[type="email"] {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #555;
+        color: #fff;
+        font-family: 'PT Serif', serif;
+        font-size: 15px;
+        padding: 10px 0;
+        outline: none;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+      }
+      .about-form-group input:focus {
+        border-bottom-color: #d4af37;
+      }
+      .about-form-group textarea {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #555;
+        color: #fff;
+        font-family: 'PT Serif', serif;
+        font-size: 15px;
+        padding: 10px 0;
+        outline: none;
+        box-sizing: border-box;
+        resize: vertical;
+        min-height: 80px;
+        transition: border-color 0.3s;
+      }
+      .about-form-group textarea:focus {
+        border-bottom-color: #d4af37;
+      }
+      .about-newsletter-check {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+      .about-newsletter-check input[type="checkbox"] {
+        accent-color: #d4af37;
+        width: 14px;
+        height: 14px;
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+      .about-newsletter-check label {
+        color: #888;
+        font-family: 'PT Serif', serif;
+        font-size: 12px;
+        cursor: pointer;
+        margin: 0;
+        line-height: 1;
+      }
+      .about-form .submit-btn {
+        background: linear-gradient(225deg, #d4af37, #98720b);
+        color: #17252a;
+        font-family: Oswald, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 4px;
+        padding: 14px 36px;
+        cursor: pointer;
+        transition: box-shadow 0.3s;
+        margin-top: 8px;
+      }
+      .about-form .submit-btn:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      }
+      .about-form .success-message {
+        display: none;
+        color: #d4af37;
+        font-family: 'PT Serif', serif;
+        font-size: 16px;
+        padding: 20px 0;
+      }
+      .about-form .error-message {
+        display: none;
+        color: #e55;
+        font-family: 'PT Serif', serif;
+        font-size: 14px;
+        margin-top: 12px;
+      }
+
+      /* Contact Right Image */
+      .about-contact-right {
+        border-radius: 0 8px 8px 0;
+        overflow: hidden;
+        position: relative;
+      }
+      .about-contact-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transform: scale(1);
+        transition: transform 0.1s linear;
+        will-change: transform;
+      }
+      .about-contact-right::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.15);
+        pointer-events: none;
+      }
+
+      /* Responsive */
+      @media screen and (max-width: 991px) {
+        .about-nav { padding: 16px 20px; }
+        .about-nav-socials { display: none; }
+        .about-nav .fullscreen-nav {
+          display: flex;
+          flex-direction: column;
+          gap: 3px;
+          cursor: pointer;
+          padding: 6px 0;
+        }
+        .about-nav .fullscreen-nav .hamburger-line {
+          width: 22px;
+          height: 2px;
+          margin-bottom: 3px;
+          background: #fff;
+          border-radius: 0;
+        }
+        .about-nav .fullscreen-nav .hamburger-line.last {
+          width: 22px;
+          margin-bottom: 0;
+        }
+        .about-nav .fullscreen-nav .hamburger-line.first {
+          width: 22px;
+        }
+        .about-hero { height: 50vh; }
+        .about-section { padding: 60px 0; }
+        .about-bio-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .about-bio-image { max-width: 500px; }
+        .about-contact-grid {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+        .about-contact-left {
+          border-right: 1px solid #333;
+          border-bottom: none;
+          border-radius: 8px 8px 0 0;
+          padding: 44px 36px;
+        }
+        .about-contact-right {
+          border-radius: 0 0 8px 8px;
+          min-height: 400px;
+        }
+      }
+      @media screen and (max-width: 479px) {
+        .about-nav { padding: 12px 16px; }
+        .about-nav-back { font-size: 11px; gap: 5px; }
+        .about-nav-center img { height: 44px; }
+        .about-hero { height: 40vh; min-height: 280px; }
+        .about-section { padding: 44px 0; }
+        .about-container { width: 92%; }
+        .about-bio-text p { font-size: 15px; }
+        .about-contact-left {
+          padding: 32px 24px;
+        }
+        .about-contact-left h2 { font-size: 32px; }
+        .about-form-row { flex-direction: column; gap: 0; }
+        .about-contact-right { min-height: 320px; }
+      }
+    </style>
+    <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="images/app-icon.png" rel="apple-touch-icon" />
+    <script>
+      (function(w, i, g) {
+        w[g] = w[g] || [];
+        if (typeof w[g].push == 'function') w[g].push.apply(w[g], Array.isArray(i) ? i : [i]);
+      })(window, ['UA-182845787-1'], 'google_tags_first_party');
+    </script>
+    <script async="" src="/g0lnomhfn3mgNWU0MzRhMmRiMGVkOWE0YjQxM2YzYzBk/0xsu4S4HfrFgN4SeqVzjJ4Ppaa-Mpw"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('set', 'developer_id.dZGVlNj', true);
+      gtag('set', 'developer_id.dYWYxNW', true);
+      gtag('js', new Date());
+      gtag('config', 'UA-182845787-1', { 'anonymize_ip': false });
+    </script>
+  </head>
+  <body>
+    <!-- Overlay Nav -->
+    <nav class="about-nav">
+      <div class="about-nav-left">
+        <a href="/" class="about-nav-back"><span class="arrow">&#8592;</span> Back to Home</a>
+      </div>
+      <a href="/" class="about-nav-center"><img src="images/sb_logoupdate.png" alt="Sadie Bass" /></a>
+      <div class="about-nav-right">
+        <div class="about-nav-socials">
+          <a href="https://www.facebook.com/SadieBassCountryMusic/" target="_blank"><img src="images/facebook-logo.svg" alt="Facebook" class="nav-social-icon" /></a>
+          <a href="https://www.instagram.com/sadiebass__/" target="_blank"><img src="images/instagram.svg" alt="Instagram" class="nav-social-icon" /></a>
+          <a href="https://open.spotify.com/artist/0KKnDewzC3LxfR6L3RA3i8?si=4aBWdxtFTAqe6u_3jVec0w" target="_blank"><img src="images/spotify-sketch.svg" alt="Spotify" class="nav-social-icon" /></a>
+          <a href="https://www.youtube.com/channel/UCwouHcnO1VMjbEK-hCPw63Q" target="_blank"><img src="images/logo.svg" alt="YouTube" class="nav-social-icon" /></a>
+          <a href="https://www.tiktok.com/@sadiebass__" target="_blank"><img src="images/tiktok.svg" alt="TikTok" class="nav-social-icon" /></a>
+          <a href="https://music.apple.com/us/artist/sadie-bass/1313283286" target="_blank"><img src="images/apple-music.svg" alt="Apple Music" class="nav-social-icon" /></a>
+        </div>
+        <div class="fullscreen-nav">
+          <div class="hamburger-line first"></div>
+          <div class="hamburger-line middle"></div>
+          <div class="hamburger-line last"></div>
+        </div>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <div class="mobile-nav"><a href="/" class="nav-link mobile-nav-link">Home</a><a href="https://www.sadiebassmerch.com/" target="_blank" class="nav-link mobile-nav-link">Store</a><a href="/music" class="nav-link mobile-nav-link">Music</a><a href="/shows" class="nav-link mobile-nav-link">Shows</a><a href="/about" aria-current="page" class="nav-link mobile-nav-link w--current">About</a><a href="/contact" class="nav-link mobile-nav-link">Contact</a>
+        <div class="nav-social mobile-social">
+          <div class="artist-socials w-dyn-list">
+            <div role="list" class="w-dyn-items">
+              <div role="listitem" class="artist-social-icons w-dyn-item"><a href="https://www.facebook.com/SadieBassCountryMusic/" target="_blank" class="facebook-profile w-inline-block"><img src="images/facebook-logo.svg" alt="Facebook Icon" class="nav-social-icon" /></a><a href="https://www.instagram.com/sadiebass__/" target="_blank" class="instagram-profile w-inline-block"><img src="images/instagram.svg" alt="Instagram Icon" class="nav-social-icon" /></a><a href="https://open.spotify.com/artist/0KKnDewzC3LxfR6L3RA3i8?si=4aBWdxtFTAqe6u_3jVec0w" target="_blank" class="spotify-profile w-inline-block"><img src="images/spotify-sketch.svg" alt="Spotify Icon" class="nav-social-icon" /></a><a href="https://www.youtube.com/channel/UCwouHcnO1VMjbEK-hCPw63Q" target="_blank" class="youtube-profile w-inline-block"><img src="images/logo.svg" alt="Youtube Icon" class="nav-social-icon" /></a><a href="https://www.tiktok.com/@sadiebass__" target="_blank" class="tiktok-profile w-inline-block"><img src="images/tiktok.svg" alt="TikTok Icon" class="nav-social-icon" /></a><a href="https://music.apple.com/us/artist/sadie-bass/1313283286" target="_blank" class="apple-music-profile w-inline-block"><img src="images/apple-music.svg" alt="Apple Music Icon" class="nav-social-icon" /></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Video Banner -->
+    <div class="about-hero">
+      <video autoplay muted loop playsinline class="about-hero-video">
+        <source src="https://cdn.prod.website-files.com/5e434a2db0ed9a4b413f3c0d%2F69d4fd044dc23e39c1fd92e5_BG%20Recap%20w_%20Wake%20N%20Bake_webm.webm" type="video/webm" />
+      </video>
+      <div class="about-hero-fade"></div>
+    </div>
+
+    <!-- Bio Section -->
+    <div class="about-section bio">
+      <div class="about-container">
+        <div class="about-bio-grid">
+          <div class="about-bio-image">
+            <img src="images/about_Image_1.jpg" alt="Sadie Bass" />
+          </div>
+          <div class="about-bio-text">
+            <p>Country singer/songwriter <span class="artist-name">Sadie Bass</span> brings a mix of small-town grit, outdoor roots, and modern edge to Nashville's country scene. Originally from Bath, Michigan, she first built a following through her work as an outdoorswoman on television, appearing on series across Discovery, Sportsman, and Outdoors channels.</p>
+            <p>After moving to Nashville to pursue music full-time, Bass gained national attention as a contestant on NBC's <a href="https://www.youtube.com/watch?v=hc06NZiw9gs&amp;list=RDhc06NZiw9gs&amp;start_radio=1" target="_blank"><em>The Voice</em></a> in 2022. She hit the ground running the following year, independently touring 80 shows across 20 states.</p>
+            <p>In 2024, Bass signed with <a href="https://www.wmeagency.com/" target="_blank">WME</a> and went on to perform major festivals including <a href="https://tortugamusicfestival.com/" target="_blank">Tortuga</a>, <a href="https://watershedfest.com/" target="_blank">Watershed</a>, <a href="https://carolinacountrymusicfest.com/" target="_blank">CCMF</a>, <a href="https://barefootcountrymusicfest.com/" target="_blank">Barefoot</a>, and <a href="https://fasterhorsesfestival.com/" target="_blank">Faster Horses</a>. She also joined Kid Rock's <a href="https://rockthecountry.com/" target="_blank">Rock The Country</a> festivals and provided direct support on tour for Randy Houser and Justin Moore.</p>
+            <p>In 2024, Bass signed a publishing deal with <a href="https://www.sonymusicpub.com/en" target="_blank">Sony Music Publishing</a>, followed by a management deal with <a href="https://thefamilie.com/" target="_blank">The Familie</a>. After spending much of 2025 writing and recording, she is eager to hit the road again in 2026 and is set to release new music consistently throughout the year.</p>
+            <p>As an independent artist, Bass has built her career from the ground up&#x2014;playing hundreds of shows across almost all 50 states, generating millions of streams, and growing a social audience of over 600,000 fans. With a brand rooted in authenticity, humor, and Midwest values, she continues carving out her own lane in country music.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Separator -->
+    <div class="about-section" style="padding: 0;">
+      <div class="about-container">
+        <div class="about-divider"></div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="about-section">
+      <div class="about-container">
+        <div class="about-contact-grid">
+          <div class="about-contact-left">
+            <h2>Contact</h2>
+            <div class="about-contact-info">
+              <p><strong>Management</strong> &#x2013; Emma Kyes &#x2013; The Familie &#x2013; <a href="mailto:ekyes@thefamilie.com">ekyes@thefamilie.com</a></p>
+              <p><strong>Booking</strong> &#x2013; WME &#x2013; <a href="mailto:KMeads.assistant@WMEAgency.com">KMeads.assistant@WMEAgency.com</a></p>
+              <p><strong>General</strong> &#x2013; Sadie Bass Information/Help &#x2013; <a href="mailto:sadiebassmusic@gmail.com">sadiebassmusic@gmail.com</a></p>
+            </div>
+            <div class="about-form">
+              <form id="about-contact-form" name="about-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="bot-field" />
+                <input type="hidden" name="form-name" value="about-contact" />
+                <div class="about-form-row">
+                  <div class="about-form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required />
+                  </div>
+                  <div class="about-form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required />
+                  </div>
+                </div>
+                <div class="about-form-group">
+                  <label for="about-email">Email</label>
+                  <input type="email" id="about-email" name="email" required />
+                </div>
+                <div class="about-newsletter-check">
+                  <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked />
+                  <label for="newsletter">Sign up for news and updates</label>
+                </div>
+                <div class="about-form-group">
+                  <label for="subject">Subject</label>
+                  <input type="text" id="subject" name="subject" required />
+                </div>
+                <div class="about-form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" required></textarea>
+                </div>
+                <input type="submit" class="submit-btn" value="Contact" />
+              </form>
+              <div class="success-message">
+                <div>Thank you! Your message has been sent.</div>
+              </div>
+              <div class="error-message">
+                <div>Oops! Something went wrong. Please try again.</div>
+              </div>
+            </div>
+          </div>
+          <div class="about-contact-right">
+            <img src="images/about_Image_2.jpg" alt="Sadie Bass" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="section footer">
+      <div class="inner-container">
+        <div class="column center">
+          <div class="footer-menu">
+            <div class="footer-nav"><a href="/music" class="nav-link footer-link">Music<span class="nav-link-line"> </span></a><a href="https://sadiebassmerch.com" target="_blank" class="nav-link footer-link">Store<span class="nav-link-line"> </span></a><a href="/shows" class="nav-link footer-link">Shows<span class="nav-link-line"> </span></a><a href="/about" aria-current="page" class="nav-link footer-link w--current">About<span class="nav-link-line"> </span></a><a href="/contact" class="nav-link footer-link">Contact<span class="nav-link-line"> </span></a></div>
+            <div class="nav-social footer-social">
+              <div class="artist-socials w-dyn-list">
+                <div role="list" class="w-dyn-items">
+                  <div role="listitem" class="artist-social-icons w-dyn-item"><a href="https://www.facebook.com/SadieBassCountryMusic/" target="_blank" class="facebook-profile w-inline-block"><img src="images/facebook-logo.svg" alt="Facebook Icon" class="nav-social-icon" /></a><a href="https://www.instagram.com/sadiebass__/" target="_blank" class="instagram-profile w-inline-block"><img src="images/instagram.svg" alt="Instagram Icon" class="nav-social-icon" /></a><a href="https://open.spotify.com/artist/0KKnDewzC3LxfR6L3RA3i8?si=4aBWdxtFTAqe6u_3jVec0w" target="_blank" class="spotify-profile w-inline-block"><img src="images/spotify-sketch.svg" alt="Spotify Icon" class="nav-social-icon" /></a><a href="https://www.youtube.com/channel/UCwouHcnO1VMjbEK-hCPw63Q" target="_blank" class="youtube-profile w-inline-block"><img src="images/logo.svg" alt="Youtube Icon" class="nav-social-icon" /></a><a href="https://www.tiktok.com/@sadiebass__" target="_blank" class="tiktok-profile w-inline-block"><img src="images/tiktok.svg" alt="TikTok Icon" class="nav-social-icon" /></a><a href="https://music.apple.com/us/artist/sadie-bass/1313283286" target="_blank" class="apple-music-profile w-inline-block"><img src="images/apple-music.svg" alt="Apple Music Icon" class="nav-social-icon" /></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <div class="footer-legal-links"><a href="#" onclick="openLegalModal('privacy');return false;">Privacy Policy</a> | <a href="#" onclick="openLegalModal('tos');return false;">Terms of Service</a></div>
+          <div class="text-block-2">Copyright 2026 Sadie Bass Music | <a href="https://bravuramarketing.com" target="_blank">Designed &amp; Developed by Bravura</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legal Modal -->
+    <div id="legal-modal" class="legal-modal">
+      <div class="legal-modal-content">
+        <button class="legal-modal-close" onclick="closeLegalModal()">&times;</button>
+        <div id="legal-modal-body"></div>
+      </div>
+    </div>
+
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/site.js" type="text/javascript"></script>
+    <script>
+      (function () {
+        var images = document.querySelectorAll('.about-bio-image img, .about-contact-right img');
+        if (!images.length) return;
+
+        function onScroll() {
+          var vh = window.innerHeight;
+          images.forEach(function (img) {
+            var rect = img.getBoundingClientRect();
+            // Progress 0 → 1 as the image travels from bottom of viewport to top
+            var progress = 1 - (rect.top / vh);
+            // Clamp between 0 and 1
+            progress = Math.max(0, Math.min(1, progress));
+            // Scale from 1.0 to 1.08 as user scrolls past
+            var scale = 1 + progress * 0.08;
+            img.style.transform = 'scale(' + scale + ')';
+          });
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      })();
+    </script>
+    <script>
+      var legalContent = {
+        privacy: '<h1>Privacy Policy</h1><p class="legal-updated">Last updated: April 4, 2026</p>' +
+          '<h2>Introduction</h2><p>Sadie Bass Music (\u201cwe,\u201d \u201cus,\u201d or \u201cour\u201d) respects your privacy. This Privacy Policy explains how we collect, use, and protect your personal information when you visit sadiebassmusic.com (the \u201cSite\u201d).</p>' +
+          '<h2>Information We Collect</h2>' +
+          '<h3>Information You Provide</h3><ul><li><strong>Email address</strong> \u2014 when you subscribe to our mailing list</li><li><strong>Name and message</strong> \u2014 if you contact us via email</li></ul>' +
+          '<h3>Information Collected Automatically</h3><ul><li>Browser type, device, and operating system</li><li>Pages visited and time spent on the Site</li><li>IP address and approximate location</li><li>Referral source</li></ul>' +
+          '<h2>How We Use Your Information</h2><ul><li>Send email updates about new music, tour dates, merchandise, and promotions</li><li>Respond to inquiries</li><li>Improve the Site and user experience</li><li>Analyze traffic via Google Analytics</li></ul>' +
+          '<h2>Third-Party Services</h2><p>We use the following third-party services that may collect data:</p><ul><li><strong>Netlify</strong> \u2014 hosting and form processing</li><li><strong>Mailchimp</strong> \u2014 email marketing and subscriber management</li><li><strong>Google Analytics</strong> \u2014 website traffic analysis</li><li><strong>Spotify, YouTube, Apple Music</strong> \u2014 embedded media players</li><li><strong>Bandsintown</strong> \u2014 show listings widget</li></ul><p>Each service operates under its own privacy policy.</p>' +
+          '<h2>Cookies</h2><p>The Site uses cookies and similar technologies for analytics and embedded content functionality. You can disable cookies through your browser settings.</p>' +
+          '<h2>Your Rights</h2><p>You may:</p><ul><li>Unsubscribe from emails at any time using the link in each email</li><li>Request deletion of your personal data by emailing <a href="mailto:sadiebassmusic@gmail.com">sadiebassmusic@gmail.com</a></li></ul>' +
+          '<h2>Data Security</h2><p>We take reasonable measures to protect your information. However, no method of transmission over the internet is 100% secure.</p>' +
+          '<h2>Children\'s Privacy</h2><p>The Site is not directed at children under 13. We do not knowingly collect personal information from children.</p>' +
+          '<h2>Changes</h2><p>We may update this policy from time to time. Changes will be posted on this page with an updated date.</p>' +
+          '<h2>Contact</h2><p>Questions about this policy? Email us at <a href="mailto:sadiebassmusic@gmail.com">sadiebassmusic@gmail.com</a>.</p>',
+        tos: '<h1>Terms of Service</h1><p class="legal-updated">Last updated: April 4, 2026</p>' +
+          '<h2>Agreement</h2><p>By accessing sadiebassmusic.com (the \u201cSite\u201d), you agree to these Terms of Service. If you do not agree, please do not use the Site.</p>' +
+          '<h2>Use of the Site</h2><p>The Site is provided for personal, non-commercial use. You agree not to:</p><ul><li>Copy, reproduce, or distribute any content without permission</li><li>Use the Site for unlawful purposes</li><li>Interfere with the Site\'s operation or security</li><li>Submit false or misleading information</li><li>Use automated tools to scrape or harvest data</li></ul>' +
+          '<h2>Intellectual Property</h2><p>All content on the Site \u2014 including music, images, logos, text, and design \u2014 is owned by Sadie Bass Music or its licensors and is protected by copyright and trademark laws. You may not use any content without prior written permission.</p>' +
+          '<h2>Music and Media</h2><p>Music and video content is provided via third-party platforms (Spotify, Apple Music, YouTube). Your use of that content is subject to those platforms\' respective terms of service.</p>' +
+          '<h2>Merchandise</h2><p>Merchandise purchases are processed through our external store (sadiebassmerch.com) and are subject to that store\'s terms, return policy, and payment processing agreements.</p>' +
+          '<h2>Email Subscriptions</h2><p>By subscribing to our mailing list, you consent to receive promotional emails. You can unsubscribe at any time. We will not sell or share your email address with unrelated third parties.</p>' +
+          '<h2>External Links</h2><p>The Site contains links to third-party websites and services. We are not responsible for their content, practices, or policies.</p>' +
+          '<h2>Disclaimer</h2><p>The Site is provided \u201cas is\u201d without warranties of any kind. We do not guarantee the Site will be error-free or uninterrupted.</p>' +
+          '<h2>Limitation of Liability</h2><p>Sadie Bass Music shall not be liable for any damages arising from your use of the Site, including direct, indirect, incidental, or consequential damages.</p>' +
+          '<h2>Changes</h2><p>We may update these terms at any time. Continued use of the Site after changes constitutes acceptance of the updated terms.</p>' +
+          '<h2>Contact</h2><p>Questions about these terms? Email us at <a href="mailto:sadiebassmusic@gmail.com">sadiebassmusic@gmail.com</a>.</p>'
+      };
+      function openLegalModal(type) {
+        var modal = document.getElementById('legal-modal');
+        document.getElementById('legal-modal-body').innerHTML = legalContent[type];
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLegalModal() {
+        var modal = document.getElementById('legal-modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      document.getElementById('legal-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeLegalModal();
+      });
+    </script>
+  </body>
+</html>
